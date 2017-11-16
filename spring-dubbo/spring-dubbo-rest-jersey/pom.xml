@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>spring-dubbo</artifactId>
+        <groupId>com.dmxiaoshen</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>spring-dubbo-rest-jersey</artifactId>
+    <packaging>war</packaging>
+    <name>spring-dubbo-rest-jersey Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <jersey.version>2.19</jersey.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.dmxiaoshen</groupId>
+            <artifactId>spring-dubbo-client</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.test-framework</groupId>
+            <artifactId>jersey-test-framework-core</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.test-framework.providers</groupId>
+            <artifactId>jersey-test-framework-provider-grizzly2</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+            <!-- 这个不加 post报415 不能转对象-->
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <version>${jersey.version}</version>  <!-- make sure the jersey version matches the one you are using -->
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>spring-dubbo-rest-jersey</finalName>
+    </build>
+</project>
